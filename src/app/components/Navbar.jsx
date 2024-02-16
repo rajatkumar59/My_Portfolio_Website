@@ -4,6 +4,7 @@ import Link from 'next/link'
 import NavLink from './NavLink'
 import { XIcon as XmarkIcon, MenuIcon as Bars3Icon } from '@heroicons/react/solid';
 import MenuOverlay from './MenuOverlay';
+import Image from 'next/image';
 
 const navLinks = [
     {href: '#About', title: 'About'},
@@ -18,9 +19,10 @@ function Navbar() {
             <div className='flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-11 py-2'>
                 <Link href={"/"}>
                     <div className="text-2xl md:text-5xl text-white font-semibold">
-                        LOGO
+                       <Image src="/images/LogoImage.png" alt="logo" width={200} height={200} />
                     </div>
                 </Link>
+
                 <div className='mobile-menu block md:hidden'>
                     <button className='flex items-center px-3 py-2 border border-slate-200 text-slate-200 hover:text-white hover:border-white-200' onClick={() => setNavbarOpen(!navbarOpen)}>
                         {navbarOpen ? <XmarkIcon className='h-6 w-6 text-white' /> : <Bars3Icon className='h-6 w-6 text-white' />}
